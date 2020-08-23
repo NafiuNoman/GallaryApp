@@ -1,6 +1,6 @@
 ----- NEW TO ME -----
 
-#easy way to context in fragment
+#easy way to get context in fragment
 
    @Override
     public void onAttach(@NonNull Context context) {
