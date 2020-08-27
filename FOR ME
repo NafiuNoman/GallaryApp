@@ -24,6 +24,6 @@
      
     // ortherwise every image item will be shown in differnt size in the recyclerView which leads to ugliness
     
-    //never set add bottom contrains of recylcerView when using tabLayout otherwise it will push the tabLayout upward as result tabLayout will disappear
+    //never set add bottom contrains of viewPager2 when using tabLayout otherwise it will push the tabLayout upward as  a result tabLayout will disappear
      
      
