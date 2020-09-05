@@ -10,20 +10,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.List;
+
 public class imageAdapter extends RecyclerView.Adapter<imageAdapter.MyViewHolder> {
 
 
-    //Context context;
+    Context context;
+    List<String> AllImage;
 
-    public imageAdapter(Context context) {
-       // this.context = context;
+    public imageAdapter(Context context,List<String> AllImage) {
+        this.context = context;
+        this.AllImage = AllImage;
     }
 
     @NonNull
     @Override
     public imageAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
 
         View view = layoutInflater.inflate(R.layout.my_image_row,parent,false);
 
@@ -35,26 +41,24 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull imageAdapter.MyViewHolder holder, int position) {
 
-        holder.imageView.setImageResource(R.drawable.ic_spider);
+        Glide.with(context).load(AllImage.get(position)).into(holder.imageView);
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 30;
+        return AllImage.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
            imageView = itemView.findViewById(R.id.imageViewId);
-           textView = itemView.findViewById(R.id.textViewId);
 
         }
     }

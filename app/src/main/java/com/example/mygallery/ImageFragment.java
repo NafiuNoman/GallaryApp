@@ -7,10 +7,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +22,9 @@ public class ImageFragment extends Fragment {
 
     Context con;
     RecyclerView recyclerView;
+
+    List<String> images;
+
 
    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,7 +44,6 @@ public class ImageFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         //trick to get fragment context
-
         super.onAttach(context);
         con = context;
  }
@@ -85,21 +88,24 @@ public class ImageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        Log.d("from Oncreate","it called");
+
 
         View view = inflater.inflate(R.layout.fragment_image, container, false);
 
-        imageAdapter imgAdapter = new imageAdapter(con);
+        ImageGallery imageGallery = new ImageGallery();
 
-        Log.d("from Oncreate","adapter is made");
+        images = imageGallery.FetchAllImage(con);
+
+        imageAdapter imgAdapter = new imageAdapter(con,images);
 
         recyclerView = view.findViewById(R.id.recyclerId);
 
-        Log.d("from Oncreate","it got the id"+recyclerView);
+        recyclerView.setHasFixedSize(true);
 
         recyclerView.setAdapter(imgAdapter);
 
-        Log.d("from Oncreate","set  the adapter");
+
+
 
 
         return view;

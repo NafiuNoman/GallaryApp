@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager2.setAdapter(myAdapter);
 
+       // Boolean isSDPresent = android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
 
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
