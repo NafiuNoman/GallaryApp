@@ -1,0 +1,29 @@
+----- NEW TO ME -----
+
+#easy way to get context in fragment
+
+   @Override
+    public void onAttach(@NonNull Context context) {
+        
+
+        super.onAttach(context);
+        con = context;
+     }
+     
+     
+     #to get access to findviewById in fragment
+     # fragment-> onCreatView (after inflating the view)
+     
+     Xcomponent = view.findViewById(R.id.XId);
+     
+     ****
+     very impotant
+      Xml set to ->
+     
+     android:scaleType="centerCrop"
+     
+    // ortherwise every image item will be shown in differnt size in the recyclerView which leads to ugliness
+    
+    //never set add bottom contrains of viewPager2 when using tabLayout otherwise it will push the tabLayout upward as  a result tabLayout will disappear
+     
+     
