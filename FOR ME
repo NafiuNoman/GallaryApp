@@ -25,5 +25,36 @@
     // ortherwise every image item will be shown in differnt size in the recyclerView which leads to ugliness
     
     //never set add bottom contrains of viewPager2 when using tabLayout otherwise it will push the tabLayout upward as  a result tabLayout will disappear
+    
+    
+    
+    ***************
+    
+    Image click on Show (transfer from Recycler to New Activity for full Display)
+    
+    
+  From Adapter------> 
+
+  Intent intent = new Intent(context,ActImageView.class);
+
+  String pic = AllImage.get(position);  //(AllImage = List<String> nothing but the location of images )
+
+                intent.putExtra("picture",pic);
+
+                context.startActivity(intent);
+
+To Activity------>
+
+  ImageView imageView;
+  String image;
+
+        imageView = findViewById(R.id.IdImageSet);
+
+        image = getIntent().getStringExtra("picture");
+        Glide.with(this).load(image).into(imageView);
+
+
+
+
      
      
