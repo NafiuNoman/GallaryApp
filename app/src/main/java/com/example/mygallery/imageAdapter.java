@@ -1,11 +1,13 @@
 package com.example.mygallery;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,9 +41,32 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull imageAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull imageAdapter.MyViewHolder holder, final int position) {
 
         Glide.with(context).load(AllImage.get(position)).into(holder.imageView);
+
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(context,ActImageView.class);
+
+//                int value = Integer.parseInt(AllImage.get(position));
+
+                String pic = AllImage.get(position);
+
+                intent.putExtra("picture",pic);
+//                intent.putExtra("picture",AllImage.get(position));
+
+                context.startActivity(intent);
+
+
+                Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
 
 
     }

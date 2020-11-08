@@ -8,7 +8,6 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;

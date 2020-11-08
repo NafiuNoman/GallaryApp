@@ -92,10 +92,10 @@ public class videoFragment extends Fragment {
 
               VideoAdapter videoAdapter = new VideoAdapter(videos,context);
 
-        recyclerView.setHasFixedSize(true);
+              recyclerView.setHasFixedSize(true);
 
 
-        recyclerView.setAdapter(videoAdapter);
+             recyclerView.setAdapter(videoAdapter);
 
                return view;
 
