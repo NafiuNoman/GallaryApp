@@ -23,7 +23,7 @@ public class ActImageView extends AppCompatActivity {
         image = getIntent().getStringExtra("picture");
         Glide.with(this).load(image).into(imageView);
 
-        Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
 
 
 

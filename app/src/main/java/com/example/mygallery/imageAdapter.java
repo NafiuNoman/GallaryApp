@@ -52,17 +52,18 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.MyViewHolder
 
                 Intent intent = new Intent(context,ActImageView.class);
 
-//                int value = Integer.parseInt(AllImage.get(position));
+//              int value = Integer.parseInt(AllImage.get(position));
 
                 String pic = AllImage.get(position);
 
                 intent.putExtra("picture",pic);
+
 //                intent.putExtra("picture",AllImage.get(position));
 
                 context.startActivity(intent);
 
 
-                Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show();
 
 
             }
